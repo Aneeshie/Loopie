@@ -8,6 +8,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Zap, Code2, Rocket, ArrowRight, Github } from "lucide-react";
 
+/**
+ * Render the unauthenticated Loopie landing page.
+ *
+ * The component displays the full landing UI (navigation, hero, features, CTA, footer)
+ * and includes a subtle parallax background accent driven by the page scroll position.
+ * It also wires sign-up actions to Clerk's modal sign-up flow.
+ *
+ * @returns The React element for the Loopie landing page.
+ */
 export default function LoopieLanding() {
   const [scrollY, setScrollY] = useState(0);
 
