@@ -29,6 +29,15 @@ export const metadata: Metadata = {
   description: "cursor but better",
 };
 
+/**
+ * Application root layout that wraps page content with authentication and global providers.
+ *
+ * Renders the HTML skeleton and body with project fonts and antialiasing, provides Clerk authentication
+ * configured with the dark theme, and nests the app's provider tree around `children`.
+ *
+ * @param children - The page or application content to render inside the layout
+ * @returns The root React element for the application layout
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
