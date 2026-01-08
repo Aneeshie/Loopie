@@ -6,7 +6,7 @@ export const demoGenerate = inngest.createFunction(
   { id: 'demo-generate' },
   { event: "demo/generate" },
   async ({ step }) => {
-    await step.run("generate-text", async () => {
+    return await step.run("generate-text", async () => {
       return await generateText({
         model: google('gemini-2.5-flash'),
         prompt: "any 1 liner content"
