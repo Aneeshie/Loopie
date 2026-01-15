@@ -1,24 +1,10 @@
-"use client";
+import ProjectView from '@/features/projects/components/project-view'
+import React from 'react'
 
-import { useMutation, useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
-import { Button } from "@/components/ui/button";
-import { UserButton } from "@clerk/nextjs";
-
-export default function Home() {
-  const projects = useQuery(api.project.get);
-
-  const createProject = useMutation(api.project.create);
-
+const Home = () => {
   return (
-    <div>
-      <UserButton />
-      <Button onClick={() => createProject({ name: "test123" })}>
-        Create Project
-      </Button>
-      {projects?.map((proj) => {
-        return <li key={proj._id}>{proj.name}</li>;
-      })}
-    </div>
-  );
+    <ProjectView />
+  )
 }
+
+export default Home
